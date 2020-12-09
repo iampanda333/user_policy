@@ -6,11 +6,11 @@ const userPolicySchema = new mongoose.Schema({
         trim: true
     },
     policyStartDate: {
-        type: String,
+        type: Date,
         trim: true
     },
     policyEndDate: {
-        type: String,
+        type: Date,
         trim: true
     },
     policyCatagory: {
@@ -26,8 +26,9 @@ const userPolicySchema = new mongoose.Schema({
         trim: true
     },
     userId: {
-        type: String,
-        trim: true
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'User'
     }
 });
 
